@@ -5,5 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface FeatureDownloadObserver{
     val downloadState: Flow<DownloadState>
+    fun checkModuleInstalled()
+    fun downloadModule()
     fun unregister()
 }

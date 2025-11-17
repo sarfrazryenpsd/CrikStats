@@ -2,6 +2,7 @@ package com.example.crikstats.presentation.observer
 
 import com.example.crikstats.presentation.state.DownloadState
 import com.google.android.play.core.splitinstall.SplitInstallManager
+import com.google.android.play.core.splitinstall.SplitInstallRequest
 import com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener
 import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
 import kotlinx.coroutines.flow.Flow
@@ -35,6 +36,26 @@ class SplitInstallObserver @Inject constructor(
 
     init{
         splitInstallManager.registerListener(listener)
+    }
+
+    override fun checkModuleInstalled() {
+        if (splitInstallManager.installedModules.contains("Player")) {
+            _state.value = DownloadState.AlreadyInstalled
+        }
+    }
+
+    override fun downloadModule() {
+        val request = SplitInstallRequest.newBuilder()
+            .addModule("Player")
+            .build()
+
+        splitInstallManager.startInstall(request)
+            .addOnSuccessListener {
+                _state.value = DownloadState.Downloading(0)
+            }
+            .addOnFailureListener {
+                _state.value = DownloadState.Error("Download failed: ${it.message}")
+            }
     }
 
     override fun unregister() =

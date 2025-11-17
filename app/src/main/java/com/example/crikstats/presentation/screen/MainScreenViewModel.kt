@@ -20,6 +20,7 @@ class MainScreenViewModel @Inject constructor(
 
     init {
         observe()
+        observer.checkModuleInstalled()
     }
 
     private fun observe(){
@@ -29,6 +30,11 @@ class MainScreenViewModel @Inject constructor(
             }
         }
     }
+
+    fun downloadPlayers(){
+        observer.downloadModule()
+    }
+
 
     fun resetState() {
         _uiState.value = DownloadState.NotStarted
