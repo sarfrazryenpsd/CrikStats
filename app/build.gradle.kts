@@ -42,7 +42,7 @@ android {
     buildFeatures {
         compose = true
     }
-    dynamicFeatures += setOf(":feature-player")
+    dynamicFeatures += setOf(":feature_player")
 }
 
 dependencies {
