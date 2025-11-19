@@ -30,7 +30,7 @@ A demonstration Android app showcasing **Dynamic Feature Modules (DFM)** with **
     - A plain Dagger component (`FeatureComponent`)
     - Uses `EntryPointAccessors` to access dependencies from the app module
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Technology            | Purpose                  |
 |-----------------------|--------------------------|
@@ -43,7 +43,7 @@ A demonstration Android app showcasing **Dynamic Feature Modules (DFM)** with **
 | Coroutines & Flow     | Asynchronous programming |
 | MVVM                  | Architecture pattern     |
 
-## 🔧 Setup & Configuration
+## Setup & Configuration
 
 ### 1. Dynamic Feature Module Setup
 
@@ -166,7 +166,7 @@ If you want to deploy the APKs to a device, you also need to include your app's 
 3. Install via Play Store
 4. Test dynamic module download
 
-## 📱 User Flow
+## User Flow
 
 1. **Launch App** → Home screen displays
 2. **Tap "Download Player Stats Module"** → Dynamic feature download begins
