@@ -119,9 +119,9 @@ component.inject(this)
 java -jar C:/Users/sarfr/Downloads/bundletool.jar build-apks --bundle=/MyApp/my_app.aab --output=/MyApp/my_app.apks --local-testing
 
 
-## 🚀 How to Test
+## How to Test
 
-### ⚠️ Important: Regular "Run" Won't Work for Dynamic Features
+### Important: Regular "Run" Won't Work for Dynamic Features
 
 Dynamic features require **App Bundle** testing:
 
